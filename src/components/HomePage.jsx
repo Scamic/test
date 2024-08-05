@@ -31,7 +31,7 @@ const HomePage = () => {
         </div>
 
 
-          <img src="src/assets/pic2.jpg" alt="Sample" className="rounded-md w-60 h-70 pl-10 lg:h-98 lg:w-92 object-cover z-10" />
+          <img src="../assets/pic2.jpg" alt="Sample" className="rounded-md w-60 h-70 pl-10 lg:h-98 lg:w-92 object-cover z-10" />
         </div>
       </div>
     </div>
