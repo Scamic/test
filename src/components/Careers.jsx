@@ -1,4 +1,5 @@
 import React from 'react';
+import pic4 from "../assets/pic4.jpeg";
 
 const CareerSection = () => {
   return (
@@ -15,7 +16,7 @@ const CareerSection = () => {
         </p>
       </div>
       <div className="bg-slate-700 text-center py-8 px-4 rounded-lg shadow-lg w-full max-w-2xl transition-transform transform hover:-translate-y-2 hover:shadow-2xl z-10 relative">
-        <img src='src/assets/pic4.jpeg' alt="Join Us" className="w-full object-cover h-64 mb-8 rounded-t-lg" />
+        <img src={pic4} alt="Join Us" className="w-full object-cover h-64 mb-8 rounded-t-lg" />
         <h2 className="text-4xl font-semibold mb-5 text-gray-100">Join Us</h2>
         <p className="text-lg text-gray-300 mb-8">
           Discover the opportunities available to you. Work with the best minds in the industry and take your career to the next level.
