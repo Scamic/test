@@ -1,4 +1,6 @@
 import React from 'react';
+import pic3 from "../assets/pic3.jpg";
+
 
 const AboutUs = () => {
   return (
@@ -24,7 +26,7 @@ const AboutUs = () => {
 
         <div className="lg:w-1/2 flex justify-center lg:justify-end h-78 w-76 mr-6" data-aos="fade-right" data-aos-delay="400">
           <img
-            src="src/assets/pic3.jpg"
+            src={pic3}
             alt="About Us"
             className="rounded-md w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover transform transition-transform duration-500 hover:scale-105"
           />
