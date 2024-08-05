@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link, scroller } from 'react-scroll';
+import logo from "../assets/images-removebg-preview.png";
 
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -47,7 +48,7 @@ const NavBar = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-4">
-          <img src="src/assets/images-removebg-preview.png" alt="Logo" className="h-14 w-14" />
+          <img src={logo} alt="Logo" className="h-14 w-14" />
           <span className="text-white text-xl font-bold">Doutya Tech</span>
         </div>
 
@@ -59,7 +60,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 1
+            About
           </Link>
           <Link 
             to="products-section" 
@@ -67,7 +68,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 2
+            Products
           </Link>
           <Link 
             to="careers-section" 
@@ -75,7 +76,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 3
+            Careers
           </Link>
           <Link 
             to="blog-section" 
@@ -83,7 +84,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 4
+            Blogs
           </Link>
         </div>
 
