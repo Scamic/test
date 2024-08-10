@@ -5,11 +5,11 @@ const AboutUs = () => {
   return (
     <section className="bg-blue-950 text-white py-10 lg:py-20 relative overflow-hidden p-6">
       <div className="bg-black p-6 sm:p-10 container mx-auto mb-10 px-4 flex flex-col lg:flex-row items-center lg:justify-between relative -mt-10 lg:-mt-20 rounded-5xl z-10">
-        <div className="w-full lg:w-1/2 mb-10 lg:mb-0 lg:pr-8 text-center lg:text-left ml-4 lg:ml-8">
+        <div className="w-97 lg:w-1/2 mb-10 lg:mb-0 lg:pr-8 text-center lg:text-left ml-4 lg:ml-8">
           <h2 className="text-white text-4xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 lg:mb-10 underline-animation -ml-2 sm:-ml-6 lg:ml-16">
             About Us <br />
           </h2>
-          <div className='bg-gray-800 focus:outline-none rounded-lg text-left border border-gray-600 p-2 sm:p-4 lg:p-6 mr- lg:mr-100 w-full lg:w-[50vw] ml-0 sm:ml-4 lg:ml-8'>
+          <div className='bg-gray-800 focus:outline-none rounded-lg text-left border border-gray-600 p-2 sm:p-4 lg:p-6  lg:mr-20 w-full lg:w-[50vw] ml-0 sm:ml-4 lg:ml-8'>
             <p className="text-gray-300 text-sm sm:text-base lg:text-xl mb-2 sm:mb-4">
               At Doutya Tech, we are committed to revolutionizing the tech landscape with innovative solutions and exceptional service. Our team of experts works tirelessly to provide top-notch software solutions that meet the needs of modern businesses.
             </p>
