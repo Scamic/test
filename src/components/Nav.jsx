@@ -47,8 +47,8 @@ const NavBar = () => {
     <nav className={`p-4 ${scrolling ? 'bg-gray-800' : 'bg-slate-950'} transition-colors duration-300`}>
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* Logo and Title */}
-        <div className="flex items-center space-x-4">
-          <img src={logo} alt="Logo" className="h-14 w-14" />
+        <div className="flex items-center space-x-4 h-52">
+          <img src={logo} alt="Logo"  className="h-14 w-14"  />
           <span className="text-white text-xl font-bold">Doutya Tech</span>
         </div>
 
