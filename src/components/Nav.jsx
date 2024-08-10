@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link, scroller } from 'react-scroll';
 
+import logo from "../assets/images-removebg-preview.png";
+
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [scrolling, setScrolling] = useState(false);
@@ -50,7 +52,7 @@ const NavBar = () => {
         <div className="flex items-center space-x-4 ml-4 lg:ml-8">
           <div className="relative group cursor-pointer">
             <img
-              src="src/assets/images-removebg-preview.png"
+              src={logo}
               alt="Logo"
               className="h-16 w-16 lg:h-28 lg:w-28"
             />
