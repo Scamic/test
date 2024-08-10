@@ -1,40 +1,20 @@
 import React from 'react';
-import pic2 from "../assets/pic2.jpg";
-
 
 const HomePage = () => {
   return (
-    <div className="bg-slate-950 min-h-100vh ">
-      <div className="container mx-auto flex flex-wrap justify-between py-20">
-        {/* Left Section with Heading */}
-        <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
-          <h1 className="text-violet-800 text-3xl lg:text-7xl font-bold ml-4 lg:ml-12">
-            Innovating the Future,<br />One Byte at a Time.
-          </h1>
-          <p className="text-gray-400 mt-4 ml-4 lg:ml-14 text-sm lg:text-base">
-            Simplify Your Operations and Amplify Your Results. Our user-friendly solutions are built to streamline your<br />processes and boost productivity.
-          </p>
-          <div className="ml-4 lg:ml-14 mt-6 lg:mt-12">
-            <button
-              type="button"
-              className="py-2 px-4 lg:py-2.5 lg:px-5 text-xs lg:text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-3/4 sm:w-2/3 md:w-1/2 lg:w-auto"
-            >
-              Join Us
-            </button>
-          </div>
-        </div>
-
-        {/* Right Section with Image */}
-        <div className="w-full lg:w-2/5">
-
-
-        <div className='absolute inset-0 pointer-events-none z-0'>
-        <div className="absolute w-56 h-56 bg-blue-800 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-1/4 left-1/3 transform -translate-x-1/2 animate-horizontal-blob"></div>
-        </div>
-
-
-          <img src={pic2} alt="Sample" className="rounded-md w-60 h-70 pl-10 lg:h-98 lg:w-92 object-cover z-10" />
-        </div>
+    <div className="bg-blue-950 h-[60vh] sm:h-[80vh] flex flex-col items-center justify-center relative p-4">
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-transparent to-black opacity-100 z-0"></div>
+      <div className="text-center text-white z-10 mt-[-2vh] sm:-mt-22">
+        <h1 className="bg-gradient-to-b from-white to-black-50 p-4 sm:p-8 md:p-12 font-bold bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl leading-tight">
+          Solutions for <br /> the digital frontier
+        </h1>
+        <p className="mt-6 sm:mt-8 md:mt-10 text-lg sm:text-xl md:text-2xl px-4 sm:px-8">
+          Elevate your site's visibility effortlessly with AI, where smart technology meets user-friendly SEO tools.
+        </p>
+       
+        <button className="mt-8 sm:mt-12 md:mt-16 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full hover:bg-gradient-to-l text-lg sm:text-xl md:text-2xl">
+          Learn More
+        </button>
       </div>
     </div>
   );

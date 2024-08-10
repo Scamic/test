@@ -6,6 +6,14 @@ export default {
   ],  
   theme: {
     extend: {
+      borderRadius: {
+        '4xl': '2rem',   // Adjust the values as needed
+        '5xl': '2.5rem',
+        '6xl': '3rem',
+        '7xl': '3.5rem',
+        '8xl': '4rem',
+      },
+
       spacing: {
         '0': '0rem',
         '2': '0.5rem',
@@ -63,6 +71,9 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+
+  ],
 }
 

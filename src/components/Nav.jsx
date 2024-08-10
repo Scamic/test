@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link, scroller } from 'react-scroll';
-import logo from "../assets/images-removebg-preview.png";
 
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [scrolling, setScrolling] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -29,14 +29,14 @@ const NavBar = () => {
       about: 'about-section',
       products: 'products-section',
       careers: 'careers-section',
-      blog: 'blog-section'
+      blog: 'blog-section',
     };
 
     const sectionId = sectionMap[searchQuery.toLowerCase()];
     if (sectionId) {
       scroller.scrollTo(sectionId, {
         duration: 500,
-        smooth: true
+        smooth: true,
       });
     } else {
       alert(`No section found for: ${searchQuery}`);
@@ -44,52 +44,127 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={`p-4 ${scrolling ? 'bg-gray-800' : 'bg-slate-950'} transition-colors duration-300`}>
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+    <nav className={`p-4 ${scrolling ? 'bg-gray-800' : 'bg-black'} transition-colors duration-300`}>
+      <div className="container mx-auto flex items-center justify-between flex-wrap">
         {/* Logo and Title */}
-        <div className="flex items-center space-x-4 h-52">
-          <img src={logo} alt="Logo"  className="h-14 w-14"  />
-          <span className="text-white text-xl font-bold">Doutya Tech</span>
+        <div className="flex items-center space-x-4 ml-4 lg:ml-8">
+          <div className="relative group cursor-pointer">
+            <img
+              src="src/assets/images-removebg-preview.png"
+              alt="Logo"
+              className="h-16 w-16 lg:h-28 lg:w-28"
+            />
+            <span className="absolute left-20 lg:left-28 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 text-white text-lg lg:text-xl font-bold transition-all duration-500">
+              Doutya Technologies
+            </span>
+          </div>
         </div>
 
-        {/* Navigation Links */}
-        <div className="w-full lg:w-auto flex justify-center lg:space-x-8">
-          <Link 
-            to="about-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+        {/* Hamburger Menu for Mobile */}
+        <div className="lg:hidden">
+          <button
+            className="text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            About
+            <FontAwesomeIcon icon={faBars} className="text-2xl" />
+          </button>
+        </div>
+
+        {/* Slide-in Menu */}
+        <div
+          className={`fixed top-0 left-0 h-full w-64 bg-gray-800 transform ${
+            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          } transition-transform duration-300 ease-in-out lg:hidden z-50`}
+        >
+          <div className="flex justify-end p-4">
+            <button
+              className="text-white focus:outline-none"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ✕ {/* Close icon */}
+            </button>
+          </div>
+          <nav className="flex flex-col space-y-4 p-4">
+            <Link
+              to="about-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link
+              to="products-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Products
+            </Link>
+            <Link
+              to="careers-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Careers
+            </Link>
+            <Link
+              to="blog-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blogs
+            </Link>
+          </nav>
+        </div>
+
+        {/* Navigation Links for Larger Screens */}
+        <div className="hidden lg:flex space-x-30 p-2 rounded-full border-2 border-white relative">
+          <Link
+            to="about-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+          >
+            About Us
           </Link>
-          <Link 
-            to="products-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+          <Link
+            to="products-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
           >
             Products
           </Link>
-          <Link 
-            to="careers-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+          <Link
+            to="careers-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
           >
             Careers
           </Link>
-          <Link 
-            to="blog-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+          <Link
+            to="blog-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
           >
             Blogs
           </Link>
         </div>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="w-full lg:w-auto flex items-center mt-4 lg:mt-0">
+        <form
+          onSubmit={handleSearch}
+          className="w-full  lg:w-50 flex  mt-4 lg:mt-0"
+        >
           <input
             type="text"
             placeholder="Search..."
