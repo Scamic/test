@@ -3,19 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link, scroller } from 'react-scroll';
 
-import logo from "../assets/images-removebg-preview.png";
-
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [scrolling, setScrolling] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
+    setScrolling(window.scrollY > 50);
   };
 
   useEffect(() => {
@@ -49,14 +43,14 @@ const NavBar = () => {
     <nav className={`p-4 ${scrolling ? 'bg-gray-800' : 'bg-black'} transition-colors duration-300`}>
       <div className="container mx-auto flex items-center justify-between flex-wrap">
         {/* Logo and Title */}
-        <div className="flex items-center space-x-4 ml-4 lg:ml-8">
+        <div className="flex items-center space-x-4 ml-2 sm:ml-4 lg:ml-8">
           <div className="relative group cursor-pointer">
             <img
-              src={logo}
+              src="src/assets/images-removebg-preview.png"
               alt="Logo"
-              className="h-16 w-16 lg:h-28 lg:w-28"
+              className="h-12 w-12 sm:h-16 sm:w-16 lg:h-28 lg:w-28"
             />
-            <span className="absolute left-20 lg:left-28 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 text-white text-lg lg:text-xl font-bold transition-all duration-500">
+            <span className="absolute left-16 sm:left-20 lg:left-28 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 text-white text-sm sm:text-lg lg:text-xl font-bold transition-all duration-500">
               Doutya Technologies
             </span>
           </div>
@@ -68,7 +62,7 @@ const NavBar = () => {
             className="text-white focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <FontAwesomeIcon icon={faBars} className="text-2xl" />
+            <FontAwesomeIcon icon={faBars} className="text-xl sm:text-2xl" />
           </button>
         </div>
 
@@ -127,7 +121,7 @@ const NavBar = () => {
         </div>
 
         {/* Navigation Links for Larger Screens */}
-        <div className="hidden lg:flex space-x-30 p-2 rounded-full border-2 border-white relative">
+        <div className="hidden lg:flex space-x-4 lg:space-x-6 xl:space-x-8 p-2 rounded-full border-2 border-white">
           <Link
             to="about-section"
             smooth={true}
@@ -165,14 +159,14 @@ const NavBar = () => {
         {/* Search Bar */}
         <form
           onSubmit={handleSearch}
-          className="w-full  lg:w-50 flex  mt-4 lg:mt-0"
+          className="flex w-full sm:w-auto mt-4 lg:mt-0 lg:ml-4"
         >
           <input
             type="text"
             placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="px-4 py-1 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-white w-full lg:w-auto"
+            className="px-4 py-1 w-full sm:w-auto lg:w-48 xl:w-64 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-white"
           />
           <button type="submit" className="ml-2">
             <FontAwesomeIcon icon={faMagnifyingGlass} className="text-white" />
